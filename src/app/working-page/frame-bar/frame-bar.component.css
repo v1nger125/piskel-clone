@@ -1,0 +1,64 @@
+.right__frame-list,
+.right__animation_wrapper {
+  width: 246px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+}
+.right__animation_wrapper {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.frame__item_tex {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+  line-height: 24px;
+}
+.header_text-add {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 36px;
+  line-height: 24px;
+}
+.list__header {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+.frame__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  user-select: none;
+}
+.active {
+  background-color: rgb(231, 231, 231);
+}
+.frame__item_image {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.frames__wrapper {
+  max-height: 400px;
+  overflow-y: auto;
+}
+.frame__item_image-wrapper {
+  margin: 4px 0;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+.frame__item_canvas {
+  border: 1px solid rgb(189, 189, 189);
+  margin-bottom: 4px;
+}

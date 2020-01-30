@@ -1,0 +1,25 @@
+<div class="right__animation_wrapper">
+  <div class="frame__item">
+    <label class="frame__item_tex" for="fps"> FPS </label>
+    <input type="range" name="fps" id="fps" min="1" max="24" (input)="animate()" [(ngModel)]='fps'>
+    <canvas class="frame__item_canvas" width="128" height="128" [appFrameDraw]='localFrames[animatedFrame]'>Your browser is too old</canvas>
+  </div>
+</div>
+<div class="right__frame-list"
+cdkDropList
+[cdkDropListData]="localFrames"
+(cdkDropListDropped)="onDrop($event)">
+  <div class="list__header" (click)='add()'>
+    <span class="header_text-add">+</span>
+  </div>
+  <div class="frames__wrapper">
+    <div cdkDrag class="frame__item" *ngFor="let item of localFrames; index as itemId" (click)='select(itemId)' [ngClass]="{active:itemId==current}">
+      <div class="frame__item_image-wrapper">
+        <img src="assets/image/copy-icon.svg" alt="icon" class="frame__item_image" (click)='copy(item)'>
+        <span class="frame__item_tex">Frame {{ itemId }}</span>
+        <img src="assets/image/delete-icon.svg" alt="icon" class="frame__item_image" (click)='delete(item)'>
+      </div>
+      <canvas class="frame__item_canvas" width="128" height="128" [appFrameDraw]='item'>Your browser is too old</canvas>
+    </div>
+  </div>
+</div>

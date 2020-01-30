@@ -1,0 +1,41 @@
+<div class="left__tool-list">
+  <div class="list__item" [ngClass]="{active:tool=='pen'}" (click)="changeTool('pen')">
+    <img src="assets/image/pencil-icon.svg" alt="icon" class="list__item_image">
+    <span class="list__item_text">Pencil</span>
+  </div>
+  <div class="list__item" [ngClass]="{active:tool=='bucket'}" (click)="changeTool('bucket')">
+    <img src="assets/image/paint-bucket-icon.svg" alt="icon" class="list__item_image">
+    <span class="list__item_text">Paint bucket</span>
+  </div>
+  <div class="list__item" [ngClass]="{active:tool=='picker'}" (click)="changeTool('picker')">
+    <img src="assets/image/choose-color-icon.svg" alt="icon" class="list__item_image">
+    <span class="list__item_text">Color picker</span>
+  </div>
+  <div class="list__item" [ngClass]="{active:tool=='eraser'}" (click)="changeTool('eraser')">
+    <img src="assets/image/eraser-icon.svg" alt="icon" class="list__item_image">
+    <span class="list__item_text">Eraser</span>
+  </div>
+  <div class="list__item" [ngClass]="{active:tool=='stroke'}" (click)="changeTool('stroke')">
+    <img src="assets/image/stroke-pen-icon.svg" alt="icon" class="list__item_image">
+    <span class="list__item_text">Stroke pencil</span>
+  </div>
+  <div class="list__item" [ngClass]="{active:tool=='mBucket'}" (click)="changeTool('mBucket')">
+    <img src="assets/image/magic-bucket-icon.svg" alt="icon" class="list__item_image">
+    <span class="list__item_text">Magic bucket</span>
+  </div>
+</div>
+
+<div class="left__second-tool-list">
+  <div class="list__item">
+    <div class="list__item_size" *ngFor="let item of [64,128,256,512]" [ngClass]="{active:size==item}" (click)="changeSize(item)">{{item}}</div>
+  </div>
+  <div class="list__item">
+    <div class="list__item_color" [style.background]="color"></div>
+    <span class="list__item_text">Current color</span>
+    <input type="color" class="list__item_palette" #palette (change)="changeColor(palette.value)">
+  </div>
+  <div class="list__item" (click)="changeColor(prevColor)">
+    <div class="list__item_color" [style.background]="prevColor"></div>
+    <span class="list__item_text">Prev color</span>
+  </div>
+</div>
